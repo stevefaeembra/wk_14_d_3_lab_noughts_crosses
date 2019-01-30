@@ -10,16 +10,22 @@ class GameContainer extends Component {
       squareStates : [' ','X',' ',' ',' ','O',' ',' ',' '],
       nextPlayer : 1
     };
+    this.handleSquareClick = this.handleSquareClick.bind(this);
+  };
+
+  handleSquareClick(squareIndex) {
+    console.log(`Square ${squareIndex} clicked`);
   };
 
   render() {
     return (
       <div className="gameContainer">
         <GameInfo message="TODO: Game status" />
-        <Board squareStates={this.state.squareStates} />
+        <Board onSquareClick={this.handleSquareClick} squareStates={this.state.squareStates} />
       </div>
     )
   }
+
 
 };
 
