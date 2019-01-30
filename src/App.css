@@ -84,16 +84,16 @@ h1, h2 {
   }
   25% {
     color: orange;
-    font-size: 3rem;
+    font-size: 4rem;
     transform: translateY(-3px);
   }
   50% {
     color: yellow;
-    font-size: 3rem;
+    font-size: 4rem;
     tranform: translateY(-6px);
   }
   75% {
-    color: orange;
+    color: green;
     font-size: 3rem;
     tranform: translateY(-3px);
   }
@@ -106,7 +106,7 @@ h1, h2 {
 
 .winner {
   animation: pulse;
-  animation-duration: 300ms;
+  animation-duration: 190ms;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
