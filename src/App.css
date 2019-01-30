@@ -22,7 +22,6 @@ body {
 }
 
 .gameContainer{
-
 }
 
 .reset, .form{
@@ -39,7 +38,8 @@ h1, h2 {
 
 .squares {
   display: grid;
-  transform: perspective(300px) rotateX(25deg) rotateZ(-3deg) rotateY(3deg) scale(1.2);
+  transform: perspective(300px) rotateX(25deg) rotateZ(-3deg) rotateY(3deg) scale(1.4);
+
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(3,1fr);
   width: 300px;
@@ -79,34 +79,34 @@ h1, h2 {
 @keyframes pulse {
   from {
     color: red;
-    font-size: 3rem;
-    transform: translateY(0);
+    font-size: 2rem;
+
   }
   25% {
     color: orange;
-    font-size: 4rem;
-    transform: translateY(-3px);
+    font-size: 3rem;
+
   }
   50% {
     color: yellow;
-    font-size: 4rem;
-    tranform: translateY(-6px);
+    font-size: 3.5rem;
+
   }
   75% {
     color: green;
     font-size: 3rem;
-    tranform: translateY(-3px);
+
   }
   to {
     color: red;
-    font-size: 3rem;
+    font-size: 2rem;
     transform: translateZ(0px);
   }
 }
 
 .winner {
   animation: pulse;
-  animation-duration: 190ms;
+  animation-duration: 400ms;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
