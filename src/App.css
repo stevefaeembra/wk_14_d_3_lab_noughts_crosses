@@ -11,7 +11,8 @@ html{
   width: 60%;
   margin: 0 auto;
   font-size: 16px;
-  background-color: wheat;
+  background-color: #333;
+  color: white;
 }
 
 .gameContainer{
@@ -34,7 +35,7 @@ h1, h2 {
 }
 
 .square{
-
+  color: yellow;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,20 +47,20 @@ h1, h2 {
 #cell_1,
 #cell_3,
 #cell_4 {
-  border-right: 8px solid black;
-  border-bottom: 8px solid black;
+  border-right: 8px solid white;
+  border-bottom: 8px solid white;
 }
 
 #cell_2,
 #cell_5
 {
-  border-bottom: 8px solid black;
+  border-bottom: 8px solid white;
 }
 
 #cell_6,
 #cell_7
 {
-  border-right: 8px solid black;
+  border-right: 8px solid white;
 }
 
 .winner {

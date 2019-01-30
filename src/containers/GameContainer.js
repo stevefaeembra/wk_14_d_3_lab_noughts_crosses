@@ -9,7 +9,7 @@ class GameContainer extends Component {
     this.state = {
       squareStates : [' ',' ',' ',' ',' ',' ',' ',' ',' '],
       currentPlayer : 1, // 1 (O) or 2 (X)
-      winner : "", // text about winner
+      winner : " . ", // text about winner
       winnerNumber: 0, // 0 = neither, 1 = O, 2 = X
       winLine: [] // 3 indexes to winning line's squares
     };
@@ -30,14 +30,28 @@ class GameContainer extends Component {
     let winForX = lineContents.findIndex((item) => {
       return item === "XXX";
     })
-    if (winForO > -1) {
+    let draw = lineContents.findIndex((item) => {
+      // if this is never true (returns -1) then we have a draw
+      // to reproduce, play cells 6,8,9,0,1,2,3,4,5 in that order
+      return item.indexOf(" ")>-1;
+    })
+    if (draw == -1) {
+      let winLine = this.winLines[winForO];
+      this.setState({
+        winner : "Draw!",
+        winnerNumber: 0,
+        winLine: []
+      })
+    }
+    else if (winForO > -1) {
       let winLine = this.winLines[winForO];
       this.setState({
         winner : "Player 1 (O) Wins!",
         winnerNumber: 1,
         winLine: winLine
       })
-    } else if (winForX > -1 ) {
+    }
+    else if (winForX > -1 ) {
       let winLine = this.winLines[winForX];
       this.setState({
         winner : "Player 2 (X) Wins!",
