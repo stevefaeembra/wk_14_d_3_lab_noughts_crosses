@@ -10,9 +10,6 @@ class Square extends Component {
 
 
   handleClick(event) {
-    console.log("In handleClick()");
-    const target = event.target.currentTarget;
-    //console.log(this.props.squareIndex);
     this.props.onSquareClick(this.props.squareIndex);
   };
 

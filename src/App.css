@@ -48,7 +48,7 @@ h1, h2 {
 }
 
 .square{
-  color: yellow;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,8 +82,8 @@ h1, h2 {
     font-size: 2rem;
   }
   50% {
-    color: white;
-    font-size: 3rem;
+    color: yellow;
+    font-size: 3.5rem;
   }
   to {
     color: red;

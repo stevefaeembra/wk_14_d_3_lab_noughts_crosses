@@ -10,7 +10,7 @@ class GameContainer extends Component {
     this.state = {
       squareStates : [' ',' ',' ',' ',' ',' ',' ',' ',' '],
       currentPlayer : 1, // 1 (O) or 2 (X)
-      winner : " . ", // text about winner
+      winner : "Click on a square", // text about winner
       winnerNumber: 0, // 0 = neither, 1 = O, 2 = X
       winLine: [] // 3 indexes to winning line's squares
     };
@@ -68,7 +68,7 @@ class GameContainer extends Component {
     this.setState({
       squareStates : [' ',' ',' ',' ',' ',' ',' ',' ',' '],
       currentPlayer : 1, // 1 (O) or 2 (X)
-      winner : " . ", // text about winner
+      winner : "Game reset", // text about winner
       winnerNumber: 0, // 0 = neither, 1 = O, 2 = X
       winLine: [] // 3 indexes to winning line's squares
     });
@@ -81,12 +81,12 @@ class GameContainer extends Component {
       // can only click on empty cells
       return
     }
-    if (this.state.winnerNumber != 0) {
+    if (this.state.winnerNumber !== 0) {
       // can't click once game over (refresh page to play again)
       return;
     }
     let gameSymbol = "";
-    if (this.state.currentPlayer == 1) {
+    if (this.state.currentPlayer !== 1) {
       gameSymbol = "O";
     } else {
       gameSymbol = "X";
