@@ -8,13 +8,13 @@ class GameContainer extends Component {
     super(props);
     this.state = {
       squareStates : [' ',' ',' ',' ',' ',' ',' ',' ',' '],
-      currentPlayer : 1,
-      winner : "",
-      winnerNumber: 0
+      currentPlayer : 1, // 1 (O) or 2 (X)
+      winner : "", // text about winner
+      winnerNumber: 0, // 0 = neither, 1 = O, 2 = X
+      winLine: [] // 3 indexes to winning line's squares
     };
     this.winLines = [ [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] ];
     this.handleSquareClick = this.handleSquareClick.bind(this);
-
   };
 
   detectWinner(){
@@ -24,19 +24,25 @@ class GameContainer extends Component {
       const line = this.state.squareStates[lineIndex[0]] + this.state.squareStates[lineIndex[1]] + this.state.squareStates[lineIndex[2]];
       lineContents.push(line);
     })
-    if (lineContents.findIndex((item) => {
+    let winForO = lineContents.findIndex((item) => {
       return item === "OOO";
-    }) > -1) {
+    });
+    let winForX = lineContents.findIndex((item) => {
+      return item === "XXX";
+    })
+    if (winForO > -1) {
+      let winLine = this.winLines[winForO];
       this.setState({
         winner : "Player 1 (O) Wins!",
-        winnerNumber: 1
+        winnerNumber: 1,
+        winLine: winLine
       })
-    } else if (lineContents.findIndex((item) => {
-      return item === "XXX";
-    }) > -1 ) {
+    } else if (winForX > -1 ) {
+      let winLine = this.winLines[winForX];
       this.setState({
         winner : "Player 2 (X) Wins!",
-        winnerNumber: 2
+        winnerNumber: 2,
+        winLine: winLine
       })
     }
   }
@@ -74,6 +80,7 @@ class GameContainer extends Component {
             onSquareClick={this.handleSquareClick}
             squareStates={this.state.squareStates}
             winner={this.state.winnerNumber}
+            winLine={this.state.winLine}
         />
       </div>
     )

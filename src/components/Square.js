@@ -20,7 +20,7 @@ class Square extends Component {
     let id = `cell_${this.props.squareIndex}`;
     let classes = `square player_1`;
     if (this.props.isWinner) {
-      debugger;
+      //debugger;
       classes = classes + " winner";
     }
     return (
