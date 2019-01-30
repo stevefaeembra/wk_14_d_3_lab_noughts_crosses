@@ -9,7 +9,8 @@ class GameContainer extends Component {
     this.state = {
       squareStates : [' ',' ',' ',' ',' ',' ',' ',' ',' '],
       currentPlayer : 1,
-      winner : ""
+      winner : "",
+      winnerNumber: 0
     };
     this.winLines = [ [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] ];
     this.handleSquareClick = this.handleSquareClick.bind(this);
@@ -17,7 +18,7 @@ class GameContainer extends Component {
   };
 
   detectWinner(){
-    let result = "";
+    // detects winner
     let lineContents = [];
     this.winLines.forEach((lineIndex) => {
       const line = this.state.squareStates[lineIndex[0]] + this.state.squareStates[lineIndex[1]] + this.state.squareStates[lineIndex[2]];
@@ -26,11 +27,17 @@ class GameContainer extends Component {
     if (lineContents.findIndex((item) => {
       return item === "OOO";
     }) > -1) {
-      this.setState({winner : "Player 1 (O) Wins!"})
+      this.setState({
+        winner : "Player 1 (O) Wins!",
+        winnerNumber: 1
+      })
     } else if (lineContents.findIndex((item) => {
       return item === "XXX";
     }) > -1 ) {
-      this.setState({winner : "Player 2 (X) Wins!"})
+      this.setState({
+        winner : "Player 2 (X) Wins!",
+        winnerNumber: 2
+      })
     }
   }
 
