@@ -6,7 +6,7 @@ class GameInfo extends Component {
     return (
       <Fragment>
         <h1>Current Player is {this.props.message}</h1>
-        <h2>Winner is {this.props.winner}</h2>
+        <h2>{this.props.winner}</h2>
       </Fragment>
     )
   }

@@ -24,7 +24,7 @@ h1, h2 {
 
 .squares {
   display: grid;
-  transform: perspective(300px) rotateX(45deg) scale(1.5); 
+  transform: perspective(300px) rotateX(25deg) scale(1.5); 
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(3,1fr);
   width: 300px;

@@ -26,11 +26,11 @@ class GameContainer extends Component {
     if (lineContents.findIndex((item) => {
       return item === "OOO";
     }) > -1) {
-      this.setState({winner : "Player 1"})
+      this.setState({winner : "Player 1 (O) Wins!"})
     } else if (lineContents.findIndex((item) => {
       return item === "XXX";
     }) > -1 ) {
-      this.setState({winner : "Player 2"})
+      this.setState({winner : "Player 2 (X) Wins!"})
     }
   }
 
@@ -55,11 +55,6 @@ class GameContainer extends Component {
     });
   };
 
-  // componentDidUpdate(prevProps, prevState){
-  //   let winner = this.detectWinner();
-  //   this.setState({winner : winner});
-  //   console.log(winner);
-  // }
 
   render() {
     return (
