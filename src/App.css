@@ -79,23 +79,36 @@ h1, h2 {
 @keyframes pulse {
   from {
     color: red;
-    font-size: 2rem;
+    font-size: 3rem;
+    transform: translateY(0);
+  }
+  25% {
+    color: orange;
+    font-size: 3rem;
+    transform: translateY(-3px);
   }
   50% {
     color: yellow;
-    font-size: 3.5rem;
+    font-size: 3rem;
+    tranform: translateY(-6px);
+  }
+  75% {
+    color: orange;
+    font-size: 3rem;
+    tranform: translateY(-3px);
   }
   to {
     color: red;
-    font-size: 2rem;
+    font-size: 3rem;
+    transform: translateZ(0px);
   }
 }
 .winner {
   animation: pulse;
-  animation-duration: 1000ms;
+  animation-duration: 300ms;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
   color: red;
   font-size: 3rem;
 }

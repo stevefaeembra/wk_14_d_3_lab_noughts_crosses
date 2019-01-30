@@ -16,16 +16,19 @@ class Square extends Component {
   render() {
     let id = `cell_${this.props.squareIndex}`;
     let classes = `square player_1`;
+    let classSymbol = "";
     if (this.props.isWinner) {
       //debugger;
-      classes = classes + " winner";
+      classSymbol = "winner";
     }
     return (
       <div className={classes}
         onClick={this.handleClick}
         id={id}
       >
-        {this.props.squareSymbol}
+        <span className={classSymbol}>
+          {this.props.squareSymbol}
+        </span>
       </div>
     )
   }
