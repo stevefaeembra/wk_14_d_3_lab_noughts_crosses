@@ -39,7 +39,7 @@ h1, h2 {
 
 .squares {
   display: grid;
-  transform: perspective(300px) rotateX(25deg) scale(1.2);
+  transform: perspective(300px) rotateX(25deg) rotateZ(-3deg) rotateY(3deg) scale(1.2);
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(3,1fr);
   width: 300px;
@@ -103,12 +103,13 @@ h1, h2 {
     transform: translateZ(0px);
   }
 }
+
 .winner {
   animation: pulse;
   animation-duration: 300ms;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
   color: red;
   font-size: 3rem;
 }
