@@ -17,10 +17,12 @@ class Square extends Component {
   };
 
   render() {
+    let id = `cell_${this.props.squareIndex}`;
     return (
       <div className="square"
         onClick={this.handleClick}
-        id={this.props.squareIndex}>
+        id={id}
+      >
         {this.props.squareSymbol}
       </div>
     )

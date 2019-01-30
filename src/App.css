@@ -5,18 +5,26 @@
 }
 
 html{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: 0 auto;
   font-size: 16px;
   background-color: wheat;
 }
 
 .gameContainer{
-  border: 2px solid red;
+
 }
 
-.squares{
-  border: 2px solid green;
-  margin: .1rem;
+h1, h2 {
+  margin-bottom: 2rem;
+}
+
+.squares {
   display: grid;
+  transform: perspective(300px) rotateX(45deg) scale(1.5); 
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(3,1fr);
   width: 300px;
@@ -25,11 +33,30 @@ html{
 }
 
 .square{
-  border: 2px solid black;
-  margin: .1rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+#cell_0,
+#cell_1,
+#cell_3,
+#cell_4 {
+  border-right: 8px solid black;
+  border-bottom: 8px solid black;
+}
+
+#cell_2,
+#cell_5
+{
+  border-bottom: 8px solid black;
+}
+
+#cell_6,
+#cell_7
+{
+  border-right: 8px solid black;
 }
