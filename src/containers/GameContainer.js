@@ -8,19 +8,32 @@ class GameContainer extends Component {
     super(props);
     this.state = {
       squareStates : [' ','X',' ',' ',' ','O',' ',' ',' '],
-      nextPlayer : 1
+      currentPlayer : 1
     };
     this.handleSquareClick = this.handleSquareClick.bind(this);
   };
 
   handleSquareClick(squareIndex) {
     console.log(`Square ${squareIndex} clicked`);
+    //const selectedSquare = this.state.squareStates[squareIndex];
+    let gameSymbol = "";
+    if (this.state.currentPlayer === 1) {
+      gameSymbol = "O";
+    } else {
+      gameSymbol = "X";
+    }
+    const newSquareStates = this.state.squareStates;
+    newSquareStates[squareIndex] = gameSymbol;
+    this.setState({
+      squareStates: newSquareStates,
+      currentPlayer: 3-this.state.currentPlayer
+    });
   };
 
   render() {
     return (
       <div className="gameContainer">
-        <GameInfo message="TODO: Game status" />
+        <GameInfo message={this.state.currentPlayer} />
         <Board onSquareClick={this.handleSquareClick} squareStates={this.state.squareStates} />
       </div>
     )
