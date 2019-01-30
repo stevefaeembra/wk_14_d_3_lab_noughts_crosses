@@ -15,7 +15,10 @@ class GameContainer extends Component {
 
   handleSquareClick(squareIndex) {
     console.log(`Square ${squareIndex} clicked`);
-    //const selectedSquare = this.state.squareStates[squareIndex];
+    const selectedSquare = this.state.squareStates[squareIndex];
+    if (selectedSquare !== ' ') {
+      return 
+    }
     let gameSymbol = "";
     if (this.state.currentPlayer === 1) {
       gameSymbol = "O";
