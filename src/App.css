@@ -11,8 +11,12 @@ html{
   width: 60%;
   margin: 0 auto;
   font-size: 16px;
-  background-color: #333;
   color: white;
+}
+
+body {
+  background-image: linear-gradient(to bottom, #555, #000);
+  height:100vh;
 }
 
 .gameContainer{
@@ -63,7 +67,26 @@ h1, h2 {
   border-right: 8px solid white;
 }
 
+@keyframes pulse {
+  from {
+    color: red;
+    font-size: 2rem;
+  }
+  50% {
+    color: white;
+    font-size: 4rem;
+  }
+  to {
+    color: red;
+    font-size: 2rem;
+  }
+}
 .winner {
+  animation: pulse;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
   color: red;
   font-size: 3rem;
 }

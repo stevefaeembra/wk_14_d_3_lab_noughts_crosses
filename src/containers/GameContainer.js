@@ -65,7 +65,12 @@ class GameContainer extends Component {
     console.log(`Square ${squareIndex} clicked`);
     const selectedSquare = this.state.squareStates[squareIndex];
     if (selectedSquare !== ' ') {
+      // can only click on empty cells
       return
+    }
+    if (this.state.winnerNumber != 0) {
+      // can't click once game over (refresh page to play again)
+      return;
     }
     let gameSymbol = "";
     if (this.state.currentPlayer === 1) {

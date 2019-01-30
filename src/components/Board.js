@@ -14,6 +14,7 @@ class Board extends Component {
         squareSymbol={squareSymbol}
         key={squareIndex}
         isWinner={isWinner}
+        winner={this.props.winnerNumber}
         onSquareClick={this.props.onSquareClick}
       />;
       squaresArray.push(square);
