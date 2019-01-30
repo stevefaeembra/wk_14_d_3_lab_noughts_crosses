@@ -7,7 +7,7 @@ class Board extends Component {
     let squaresArray = [];
     for(let squareIndex = 0; squareIndex < 9 ; squareIndex += 1){
       let squareSymbol = this.props.squareStates[squareIndex];
-      let square = <Square squareIndex={squareIndex}  squareSymbol={squareSymbol}/>;
+      let square = <Square squareIndex={squareIndex}  squareSymbol={squareSymbol} key={squareIndex}/>;
       squaresArray.push(square);
     }
     return (
