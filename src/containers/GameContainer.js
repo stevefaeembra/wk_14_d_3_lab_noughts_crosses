@@ -66,8 +66,15 @@ class GameContainer extends Component {
   render() {
     return (
       <div className="gameContainer">
-        <GameInfo message={this.state.currentPlayer} winner={this.state.winner}/>
-        <Board onSquareClick={this.handleSquareClick} squareStates={this.state.squareStates} />
+        <GameInfo
+           message={this.state.currentPlayer}
+           winner={this.state.winner}
+        />
+        <Board
+            onSquareClick={this.handleSquareClick}
+            squareStates={this.state.squareStates}
+            winner={this.state.winnerNumber}
+        />
       </div>
     )
   }

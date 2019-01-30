@@ -24,7 +24,7 @@ h1, h2 {
 
 .squares {
   display: grid;
-  transform: perspective(300px) rotateX(25deg) scale(1.5); 
+  transform: perspective(300px) rotateX(25deg) scale(1.5);
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(3,1fr);
   width: 300px;
@@ -59,4 +59,9 @@ h1, h2 {
 #cell_7
 {
   border-right: 8px solid black;
+}
+
+.winner {
+  color: red;
+  font-size: 5rem;
 }

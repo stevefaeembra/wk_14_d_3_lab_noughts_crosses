@@ -18,8 +18,13 @@ class Square extends Component {
 
   render() {
     let id = `cell_${this.props.squareIndex}`;
+    let classes = `square player_1`;
+    if (this.props.isWinner) {
+      debugger;
+      classes = classes + " winner";
+    }
     return (
-      <div className="square"
+      <div className={classes}
         onClick={this.handleClick}
         id={id}
       >
