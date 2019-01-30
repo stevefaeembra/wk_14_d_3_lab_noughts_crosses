@@ -5,22 +5,31 @@
 }
 
 html{
+
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   font-size: 16px;
   color: white;
 }
 
 body {
+  font-family: 'Permanent Marker', cursive;
   background-image: linear-gradient(to bottom, #555, #000);
   height:100vh;
 }
 
 .gameContainer{
 
+}
+
+.reset, .form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
 }
 
 h1, h2 {
@@ -30,7 +39,7 @@ h1, h2 {
 
 .squares {
   display: grid;
-  transform: perspective(300px) rotateX(25deg) scale(1.5);
+  transform: perspective(300px) rotateX(25deg) scale(1.2);
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(3,1fr);
   width: 300px;
@@ -74,7 +83,7 @@ h1, h2 {
   }
   50% {
     color: white;
-    font-size: 4rem;
+    font-size: 3rem;
   }
   to {
     color: red;
@@ -88,5 +97,9 @@ h1, h2 {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   color: red;
+  font-size: 3rem;
+}
+
+.resetbutton {
   font-size: 3rem;
 }

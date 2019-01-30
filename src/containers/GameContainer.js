@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import GameInfo from '../components/GameInfo.js';
-import Board from '../components/Board.js'
+import Board from '../components/Board.js';
+import Reset from '../components/Reset.js';
 
 class GameContainer extends Component {
 
@@ -15,6 +16,7 @@ class GameContainer extends Component {
     };
     this.winLines = [ [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] ];
     this.handleSquareClick = this.handleSquareClick.bind(this);
+    this.handleResetClick = this.handleResetClick.bind(this);
   };
 
   detectWinner(){
@@ -52,13 +54,24 @@ class GameContainer extends Component {
         winLine: winLine
       })
     }
-    else if (draw == -1) {
+    else if (draw === -1) {
       this.setState({
         winner : "Draw!",
         winnerNumber: 0,
         winLine: []
       })
     }
+  }
+
+  handleResetClick() {
+    // rest the board
+    this.setState({
+      squareStates : [' ',' ',' ',' ',' ',' ',' ',' ',' '],
+      currentPlayer : 1, // 1 (O) or 2 (X)
+      winner : " . ", // text about winner
+      winnerNumber: 0, // 0 = neither, 1 = O, 2 = X
+      winLine: [] // 3 indexes to winning line's squares
+    });
   }
 
   handleSquareClick(squareIndex) {
@@ -73,7 +86,7 @@ class GameContainer extends Component {
       return;
     }
     let gameSymbol = "";
-    if (this.state.currentPlayer === 1) {
+    if (this.state.currentPlayer == 1) {
       gameSymbol = "O";
     } else {
       gameSymbol = "X";
@@ -95,12 +108,16 @@ class GameContainer extends Component {
            message={this.state.currentPlayer}
            winner={this.state.winner}
         />
+        <Reset
+            onButtonClick={this.handleResetClick}
+        />
         <Board
             onSquareClick={this.handleSquareClick}
             squareStates={this.state.squareStates}
             winner={this.state.winnerNumber}
             winLine={this.state.winLine}
         />
+
       </div>
     )
   }
