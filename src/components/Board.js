@@ -14,6 +14,7 @@ class Board extends Component {
         onSquareClick={this.props.onSquareClick}
       />;
       squaresArray.push(square);
+      console.log(this.props.onSquareClick);
     }
     return (
       <div className="squares">{squaresArray}</div>

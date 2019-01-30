@@ -5,7 +5,6 @@ class Square extends Component {
   handleClick(event) {
     console.log("In handleClick()");
     //console.log(this.props.squareIndex);
-    debugger;
     this.props.onSquareClick(this.props.squareIndex);
   };
 
