@@ -18,10 +18,18 @@ html{
   margin: .1rem;
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  grid-template-rows: repeat(3,1fr)
+  grid-template-rows: repeat(3,1fr);
+  width: 300px;
+  height: 300px;
+
 }
 
 .square{
   border: 2px solid black;
   margin: .1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
 }

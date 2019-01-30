@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Square from './Square.js';
 
 class Board extends Component {
 
@@ -6,7 +7,7 @@ class Board extends Component {
     let squaresArray = [];
     for(let squareIndex = 0; squareIndex < 9 ; squareIndex += 1){
       let squareSymbol = this.props.squareStates[squareIndex];
-      let square = <div className="square" key={squareIndex}>I am square {squareIndex} and my value is {squareSymbol}</div>;
+      let square = <Square squareIndex={squareIndex}  squareSymbol={squareSymbol}/>;
       squaresArray.push(square);
     }
     return (
