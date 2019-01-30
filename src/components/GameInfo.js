@@ -4,7 +4,7 @@ class GameInfo extends Component {
 
   render() {
     return (
-      <h1>{this.props.mesage}</h1>
+      <h1>{this.props.message}</h1>
     )
   }
 }
