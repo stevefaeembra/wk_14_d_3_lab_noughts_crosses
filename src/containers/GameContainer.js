@@ -35,15 +35,8 @@ class GameContainer extends Component {
       // to reproduce, play cells 6,8,9,0,1,2,3,4,5 in that order
       return item.indexOf(" ")>-1;
     })
-    if (draw == -1) {
-      let winLine = this.winLines[winForO];
-      this.setState({
-        winner : "Draw!",
-        winnerNumber: 0,
-        winLine: []
-      })
-    }
-    else if (winForO > -1) {
+
+    if (winForO > -1) {
       let winLine = this.winLines[winForO];
       this.setState({
         winner : "Player 1 (O) Wins!",
@@ -57,6 +50,13 @@ class GameContainer extends Component {
         winner : "Player 2 (X) Wins!",
         winnerNumber: 2,
         winLine: winLine
+      })
+    }
+    else if (draw == -1) {
+      this.setState({
+        winner : "Draw!",
+        winnerNumber: 0,
+        winLine: []
       })
     }
   }
