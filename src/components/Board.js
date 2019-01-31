@@ -7,8 +7,12 @@ class Board extends Component {
 
     let squaresArray = [];
     for(let squareIndex = 0; squareIndex < 9 ; squareIndex += 1){
+
       let squareSymbol = this.props.squareStates[squareIndex];
+
+      // is square in the winning line e.g. [0,1,2] for top row
       let isWinner = (this.props.winLine.indexOf(squareIndex)>-1);
+
       let square = <Square
         squareIndex={squareIndex}
         squareSymbol={squareSymbol}

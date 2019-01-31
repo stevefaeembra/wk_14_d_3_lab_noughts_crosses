@@ -15,11 +15,11 @@ class GameContainer extends Component {
       winLine: [] // 3 indexes to winning line's squares
     };
     this.winLines = [
-      //rows
+      // horizontal rows
       [0, 1, 2],
       [3, 4, 5],
       [6, 7, 8],
-      // columns
+      // vertical columns
       [0, 3, 6],
       [1, 4, 7],
       [2, 5, 8],
